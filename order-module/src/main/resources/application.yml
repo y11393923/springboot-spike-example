@@ -1,0 +1,33 @@
+server:
+  port: 8091
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/spike?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  rabbitmq:
+    host: 192.168.174.132
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /
+  redis:
+    host: 127.0.0.1
+    database: 0
+    port: 6379
+    password:
+    #连接超时时间（毫秒）
+    timeout: 3000ms
+    lettuce:
+      pool:
+        #redis连接池的最大连接数
+        max-active: 8
+        #redis连接池中的最大空闲连接数
+        max-idle: 8
+        #redis连接池的最大阻塞等待时间，默认为-1，表示没有限制
+        max-wait: -1ms
+        #redis连接池中的最小空闲连接数
+        min-idle: 0
